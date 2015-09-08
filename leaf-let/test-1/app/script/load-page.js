@@ -8,10 +8,10 @@ var lblcurrentmsg = document.getElementById('lblcurrentmsg'),
     rootref = new Firebase('https://alert-msg.firebaseio.com/'),
     currentmsgref = rootref.child('currentmsgref');
 
-    document.getElementById("btnupdatemsg").addEventListener("click", function(){
+    btnupdatemsg.onclick = function(){
         currentmsgref.set(txtnewmsg.value);
         txtnewmsg.value = '';
-    });
+    };
     
     currentmsgref.on('value', function(snapshot){
         lblcurrentmsg.innerText = snapshot.val();
