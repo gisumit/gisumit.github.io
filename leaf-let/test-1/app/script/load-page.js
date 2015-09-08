@@ -6,7 +6,7 @@ var lblcurrentmsg = document.getElementById('lblcurrentmsg'),
 btnupdatemsg.addEventListener('click', function () {
     currentmsgref.set(txtnewmsg.value);
     txtnewmsg.value = '';
-});    
+}); 
 currentmsgref.on('value', function (snapshot) {
     lblcurrentmsg.innerText = snapshot.val();
 });
