@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="leaf-let App" />
+    <title>leaf-let App</title>
+    <meta name="theme-color" content="#BAFC36">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#BAFC36">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="leaf-let App">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="leaf-let App">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="elements/elements.html">
+</head>
+<body unresolved class="fullbleed layout vertical">
+	<template is="dom-bind" id="app">
+        <paper-header-panel class="flex" mode="scroll">
+            <paper-toolbar class="tall">
+                <img class="app-img" src="images/touch/icon-128x128.png">
+                <div class="titlefont">LEAF-LET</div>
+                    <span title></span>
+                    <paper-icon-button icon="refresh"></paper-icon-button>
+                    <paper-icon-button icon="search"></paper-icon-button>                    
+                <paper-tabs selected="{{page}}" valueattr="data-category" class="bottom self-end" style="width: 300px;">
+                    <paper-tab class="font" data-category="notice" >NOTICE</paper-tab>
+                    <paper-tab class="font" data-category="post" >POST</paper-tab>
+                    <paper-tab class="font" data-category="ems" >LEAF-LET</paper-tab>
+                </paper-tabs>
+                <div class="bottom flex"></div>
+            </paper-toolbar>
+        
+            <div fit layout verticle>
+                <iron-pages selected="{{page}}" valueattr="data-category" >
+                    <section data-category="notice" class="page-container">
+                        <section class="page-container">
+                            <section>
+                                <p>ems-msg</p>
+                                <div class="notice-box" id ="notice-box">
+                                    <small class="date-text" id-"date-text">16 Aug 2015</small>
+                                    <h1 class="title-text" id="title-text">This is the title of my first notice</h1>
+                                    <h3 class="brife-text" id="brife-text">Introduction to Research Methodology
+                                    Motivation and objectives – Research methods vs Methodology. Types of research –
+                                    Descriptive vs. Analytical, Applied vs. Fundamental, Quantitative vs. Qualitative, Conceptual
+                                    vs. Empirical.Defining Research problem and basics of principles of experimental design.
+                                    Defining and formulating the research problem -Selecting the problem - Necessity of defining
+                                    the problem - Importance of literature review in defining a problem</h3>
+                                </div>
+                            </section>
+                        </section>
+                    </section>
+                    <section data-category="post" class="page-container center">
+                        <p>ems-msg</p>
+                        <input type="date" placeholder="DATE" name="date">
+                        <input type="textbox" name="title" placeholder="Title of Notice">
+                        <textarea name="detail" placeholder="Description of Notice"></textarea>
+                        <br />
+                        <paper-fab icon="close" title="close" class="close"></paper-fab>
+                        <paper-fab icon="done" title="done" class="done"></paper-fab>
+                    </section>
+                    <section data-category="ems" class="page-container center">
+                        <p>ems-msg</p>
+                        <input type="textbox" name="title" placeholder="Enter LEAF-LET">
+                        <br />
+                        <paper-fab icon="close" title="close" class="close"></paper-fab>
+                        <paper-fab icon="done" title="done" class="done"></paper-fab>
+                    </section>
+                </iron-pages>
+            </div>
+        </paper-header-panel>
+	</template>
+	<script src="script/app.js"></script>
+    <script src="script/load-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/*
+	THIS IS THE STYLE GUIDLINE
+	OF LEAF-LET APP( A NOTICE BORD APP)
+	CREATED BY 
+		RAVINDRA KHANDAGALE
+			(ravindrakk143@gmail.com)
+		MAYUR SARODE
+			(sarodems@gmail.com)
+	MONITORED BY
+		SUMIT INGOLE
+			(gsumitingole@gmail.com)
+	THE ALL CONTAINT IN THIS STYLE GUIDLINE IS 
+	MADE UP OF OPENSOURCE TECHNOLOGIES.
+*/
+
+::selection {
+    background-color: rgba(154, 154, 154, 0.6);
+    color: black;
+}
+body {
+    background: #FAFAFA;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #242424;
+}
+@font-face{
+	font-family:'RawengulkSans';
+	src:url('../fonts/RawengulkSans-094.ttf') format('ttf');
+}
+.titlefont{
+    font-family: RawengulkSans;
+    margin-left: 10px;
+    font-size: 180%;
+}
+img.app-img {
+    width: 60px;
+    -webkit-filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
+    filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
+    -ms-filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
+    -moz-filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
+}
+.font{
+   font-family: RawengulkSans;  
+}
+.page-container{
+    	margin: 0px auto;
+        padding-bottom: 60px;
+	}
+	 .notice-box {
+	    width: 500px;
+	    border: 1px solid #DCDCDC;
+	    padding: 2%;
+	    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+	    font-family: RawengulkSans;
+	    font-weight: 100;
+	    letter-spacing: 2px;
+	    margin: 20px auto;
+	}
+	  small.date-text {
+	    font-weight: bold;
+	    padding: 3px;
+	    border-bottom: 2px solid black;
+	    /* background-color: yellow; */
+	    font-size: 10px;
+	}
+	  h1.title-text {
+	    margin-top: 1px;
+	}
+	  .notice-box:nth-child(even) {
+	    background-color: #D8D8D8;
+	    color: black;
+	    box-shadow: 0 0 8px -1px rgba(0, 0, 0, 0.67);
+	}
+		p {
+	    background-color: #E85151;
+        -webkit-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
+        -moz-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
+        -ms-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
+	    width: 100vw;
+	    padding: 15px 10px;
+	    color: white;
+	    text-transform: uppercase;
+	    text-align: center;
+	}
+	@media (max-width: 600px) {
+	  .notice-box{
+	    width: 80vw;
+	    padding: 5vw;
+	  }
+	}
+
+input[name="date"],input[name="title"], textarea[name="detail"] {
+    width: 50%;
+    margin: 15px auto;
+    height: 45px;
+    padding: 3px 10px;
+    font-size: 18px;
+    font-family: 'segoe ui';
+    transition: all ease-in-out 150ms;
+    -webkit-transition: all ease-in-out 150ms;
+    -moz-transition: all ease-in-out 150ms;
+    -ms-transition: all ease-in-out 150ms;
+}
+textarea[name="detail"]{
+	height: 100px;
+}
+.close, .done{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    margin: 10px 13% 0;
+    background-color: transparent;
+}
+.close{
+    border-color: #FF6A6A;
+    color: #FF6A6A;
+}
+.save{
+    border-color: #00FA9A;
+    color: #00FA9A;
+}
+.save:hover, .clsoe:hover{
+	box-shadow: 0 0 5px rgba(0,0,0,0.3) inset;
+	border-width: 2px;
+}
+.page-container.center{
+    	margin: 0px auto;
+    	text-align: center;
+	}
+@media (max-width: 600px) {
+	  input[name="date"],input[name="title"], textarea[name="detail"] {
+	  	width: 85%;
+	  }
+	}
