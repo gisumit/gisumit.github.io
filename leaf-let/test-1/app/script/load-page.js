@@ -1,7 +1,7 @@
 var lblcurrentmsg = document.getElementById('lblcurrentmsg'),
     txtnewmsg = document.getElementById('txtnewmsg'),
     btnupdatemsg = document.getElementById('btnupdatemsg'),
-    rootRef = new Firebase('https://alert-msg.firebaseio.com'),
+    rootRef = new Firebase('https://alert-msg.firebaseIO.com'),
     currentMessageRef = rootRef.child('currentmsgref');
 btnupdatemsg.addEventListener('click', function(){
     currentMessageRef.set(txtnewmsg.value);
