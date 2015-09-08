@@ -49,7 +49,7 @@
                     <section data-category="notice" class="page-container">
                         <section class="page-container">
                             <section>
-                                <p>ems-msg</p>
+                                <p id="lblcurrentmsg"></p>
                                 <div class="notice-box" id ="notice-box">
                                     <small class="date-text" id-"date-text">16 Aug 2015</small>
                                     <h1 class="title-text" id="title-text">This is the title of my first notice</h1>
@@ -64,7 +64,7 @@
                         </section>
                     </section>
                     <section data-category="post" class="page-container center">
-                        <p>ems-msg</p>
+                        <p id="lblcurrentmsg"></p>
                         <input type="date" placeholder="DATE" name="date">
                         <input type="textbox" name="title" placeholder="Title of Notice">
                         <textarea name="detail" placeholder="Description of Notice"></textarea>
@@ -73,16 +73,17 @@
                         <paper-fab icon="done" title="done" class="done"></paper-fab>
                     </section>
                     <section data-category="ems" class="page-container center">
-                        <p>ems-msg</p>
-                        <input type="textbox" name="title" placeholder="Enter LEAF-LET">
+                        <p id="lblcurrentmsg"></p>
+                        <input type="textbox" id="txtnewmsg" name="title" placeholder="Enter LEAF-LET">
                         <br />
                         <paper-fab icon="close" title="close" class="close"></paper-fab>
-                        <paper-fab icon="done" title="done" class="done"></paper-fab>
+                        <paper-fab icon="done" title="done" class="done" id="btnupdatemsg"></paper-fab>
                     </section>
                 </iron-pages>
             </div>
         </paper-header-panel>
 	</template>
+    <script src="script/firebase-web.js"></script>
 	<script src="script/app.js"></script>
     <script src="script/load-page.js"></script>
 </body>
