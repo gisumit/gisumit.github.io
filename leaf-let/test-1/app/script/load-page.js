@@ -3,5 +3,5 @@ var lblcurrentmsg = document.getElementById('lblcurrentmsg'),
     btnupdatemsg = document.getElementById('btnupdatemsg'),
     rootRef = new Firebase('https://alert-msg.firebaseIO.com'),
     currentMessageRef = rootRef.child('currentmsgref');
-btnupdatemsg.addEventListener('click',function(){ currentMessageRef.set(txtnewmsg.value); });
+/* btnupdatemsg.addEventListener('click',function(){ currentMessageRef.set(txtnewmsg.value); }); */
 currentMessageRef.on('value', function(snapshot) { lblcurrentmsg.innerText = snapshot.val(); });
