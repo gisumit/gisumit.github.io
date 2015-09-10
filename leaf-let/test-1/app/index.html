@@ -85,18 +85,6 @@
         </paper-header-panel>
 	</template>
 	<script src="script/app.js"></script>
-    <script>
-        var lblcurrentmsg = document.getElementById('lblcurrentmsg'),
-            txtnewmsg = document.getElementById('txtnewmsg'),
-            btnupdatemsg = document.getElementById('btnupdatemsg'),
-            rootRef = new Firebase('https://alert-msg.firebaseIO.com'),
-            currentMessageRef = rootRef.child('currentmsgref');
-        btnupdatemsg.addEventListener('click', function(){
-            currentMessageRef.set(txtnewmsg.value);
-        });
-        currentMessageRef.on('value', function(snapshot) {
-            lblcurrentmsg.innerText = snapshot.val();
-        });
-    </script>
+    	<script src="script/load.js"></script>
 </body>
 </html>
