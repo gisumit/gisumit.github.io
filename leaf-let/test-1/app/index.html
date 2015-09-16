@@ -74,11 +74,11 @@
                         <paper-fab icon="done" title="done" class="done"></paper-fab>
                     </section>
                     <section data-category="ems" class="page-container center">
-                        <p id="lblcurrentmsg"></p>
-                        <input type="textbox" id="txtnewmsg" name="title" placeholder="Enter LEAF-LET">
+                        <p id="lblmsg"></p>
+                        <input type="textbox" id="txtmsg" name="title" placeholder="Enter LEAF-LET">
                         <br />
                         <paper-fab icon="close" title="close" class="close"></paper-fab>
-                        <paper-fab icon="done" title="done" class="done" id="btnupdatemsg" onclick="myFunction()"></paper-fab>
+                        <paper-fab icon="done" title="done" class="done" id="btnsend"></paper-fab>
                     </section>
                 </iron-pages>
             </div>
@@ -86,5 +86,15 @@
 	
 	<script src="script/app.js"></script>
     	<script src="script/load-page.js"></script>
+    	<script>
+	  var lblmsg = document.getElementById('lblmsg'),
+	      txtmsg = document.getElementById('txtmsg'),
+	      btnsend = document.getElementById('btnsend'),
+	      rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
+	      currentMsg = rootRef.child('currentMsg');
+	      
+	    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
+	    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
+	</script>	
 </body>
 </html>
