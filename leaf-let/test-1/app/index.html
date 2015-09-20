@@ -85,10 +85,9 @@
 			      btnsend = document.getElementById('btnsend'),
 			      rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
 			      currentMsg = rootRef.child('currentMsg');
-			  var btnclose = document.getElementID('btnclose');
 			    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
 			    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
-			    btnclose.addEventListener('click', function(){ txtmsg.value = ''; console.log('btn Close is active'); alert('Emergency Notice Descarted...'); });
+			    
 			</script>
                     </section>
                 </iron-pages>
