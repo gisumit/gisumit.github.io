@@ -66,6 +66,10 @@
                     </section>
                     <section data-category="post" class="page-container center">
                         <p id="lblcurrentmsg"></p>
+                        <script>
+                        	 var lblmsg = document.getElementById('lblmsg');
+                        	 currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
+                        </script>
                         <input type="date" placeholder="DATE" name="date">
                         <input type="textbox" name="title" placeholder="Title of Notice">
                         <textarea name="detail" placeholder="Description of Notice"></textarea>
