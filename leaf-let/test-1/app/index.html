@@ -65,10 +65,11 @@
                         </section>
                     </section>
                     <section data-category="post" class="page-container center">
-                        <p id="lblcurrentmsg"></p>
+                        <p id="lblmsg"></p>
                         <script>
                         	 var lblmsg = document.getElementById('lblmsg'),
-                        	     rootRef = new Firebase('https://leaf-let.firebaseio.com/');
+                        	     rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
+                        	     currentMsg = rootRef.child('currentMsg');
                         	 currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
                         </script>
                         <input type="date" placeholder="DATE" name="date">
