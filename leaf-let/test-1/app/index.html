@@ -79,6 +79,16 @@
                         <br />
                         <paper-fab icon="close" title="close" class="close"></paper-fab>
                         <paper-fab icon="done" title="done" class="done" id="btnsend"></paper-fab>
+                        <script>
+			  var lblmsg = document.getElementById('lblmsg'),
+			      txtmsg = document.getElementById('txtmsg'),
+			      btnsend = document.getElementById('btnsend'),
+			      rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
+			      currentMsg = rootRef.child('currentMsg');
+			      
+			    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
+			    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
+			</script>
                     </section>
                 </iron-pages>
             </div>
@@ -86,15 +96,6 @@
 	</template>
 	<script src="script/app.js"></script>
     	<script src="script/load-page.js"></script>
-    	<script>
-	  var lblmsg = document.getElementById('lblmsg'),
-	      txtmsg = document.getElementById('txtmsg'),
-	      btnsend = document.getElementById('btnsend'),
-	      rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
-	      currentMsg = rootRef.child('currentMsg');
-	      
-	    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
-	    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
-	</script>	
+    		
 </body>
 </html>
