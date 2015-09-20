@@ -87,7 +87,8 @@
 			      currentMsg = rootRef.child('currentMsg');
 			    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
 			    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
-			    
+			 var btnclose = document.getElementById('btnclose');
+			    btnclose.addEventListener('click', function(){ txtmsg.value = ''; alert('Emergency Message Descarted...'); });
 			</script>
                     </section>
                 </iron-pages>
