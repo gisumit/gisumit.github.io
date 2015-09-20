@@ -68,8 +68,8 @@
                         <p id="lblmsg"></p>
                         <script>
                         	 var lblmsg = document.getElementById('lblmsg'),
-                        	     rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
-                        	     currentMsg = rootRef.child('currentMsg');
+                        	     rootRef = new Firebase('https://leaf-let.firebaseio.com/');
+                        	     
                         	 currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
                         </script>
                         <input type="date" placeholder="DATE" name="date">
