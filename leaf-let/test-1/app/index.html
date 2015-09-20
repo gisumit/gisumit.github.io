@@ -67,7 +67,8 @@
                     <section data-category="post" class="page-container center">
                         <p id="lblcurrentmsg"></p>
                         <script>
-                        	 var lblmsg = document.getElementById('lblmsg');
+                        	 var lblmsg = document.getElementById('lblmsg'),
+                        	     rootRef = new Firebase('https://leaf-let.firebaseio.com/');
                         	 currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
                         </script>
                         <input type="date" placeholder="DATE" name="date">
