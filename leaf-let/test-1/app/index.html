@@ -65,7 +65,7 @@
                         </section>
                     </section>
                     <section data-category="post" class="page-container center">
-                        
+                          <p id="lblmsgTab2"></p>
                         <input type="date" placeholder="DATE" name="date">
                         <input type="textbox" name="title" placeholder="Title of Notice">
                         <textarea name="detail" placeholder="Description of Notice"></textarea>
@@ -74,7 +74,7 @@
                         <paper-fab icon="done" title="done" class="done"></paper-fab>
                     </section>
                     <section data-category="ems" class="page-container center">
-                        
+                          <p id="lblmsgTab3"></p>
                         <input type="textbox" id="txtmsg" name="title" placeholder="Enter LEAF-LET">
                         <br />
                         <paper-fab icon="close" title="close" class="close" id="btnclose"></paper-fab>
@@ -85,8 +85,10 @@
 			      btnsend = document.getElementById('btnsend'),
 			      rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
 			      currentMsg = rootRef.child('currentMsg');
+			   var lblmsgTab2 = document.getElementById('lblmsgTab2'),
+			   	lblmsgTab3= document.getElementById('lblmsgTab3');
 			    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
-			    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
+			    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); lblmsgTab2.innerText = snapshot.val(); lblmsgTab3.innerText = snapshot.val(); });
 			 var btnclose = document.getElementById('btnclose');
 			    btnclose.addEventListener('click', function(){ txtmsg.value = ''; alert('Emergency Message Descarted...'); });
 			</script>
