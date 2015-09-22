@@ -60,7 +60,7 @@
                                 <script>
                         			  var lblmsg = document.getElementById('lblmsg'),
                                 			rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
-                                			currentMsg; 
+                                			currentMsg = rootRef.child('currentMsg'); 
                         			        currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
                     			</script>
                             </section>
