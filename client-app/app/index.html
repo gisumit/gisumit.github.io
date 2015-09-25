@@ -22,6 +22,7 @@
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
         <link rel="stylesheet" href="styles/main.css">
         <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
         <link rel="import" href="elements/elements.html">
     </head>
     <body unresolved class="fullbleed layout vertical">
@@ -45,7 +46,7 @@
                     <section data-category="notice" class="page-container">
                         <section class="page-container">
                             <section>
-                                <p>ems-msg</p>
+                                <p id="lblmsg"></p>
                                 <div class="notice-box" id ="notice-box">
                                     <small class="date-text" id-"date-text">16 Aug 2015</small>
                                     <h1 class="title-text" id="title-text">This is the title of my first notice</h1>
@@ -56,21 +57,28 @@
                                     Defining and formulating the research problem -Selecting the problem - Necessity of defining
                                     the problem - Importance of literature review in defining a problem</h3>
                                 </div>
+                                <script>
+                        			  var lblmsg = document.getElementById('lblmsg'),
+                                			rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
+                                			currentMsg = rootRef.child('currentMsg'); 
+                        			        currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); });
+                    			</script>
                             </section>
                         </section>
                     </section>
                     <section data-category="table-talk" class="page-container center">
                         <section class="page-container">
                             
-                            <input type="textbox" name="title" placeholder="Your Name">
-                            <textarea name="detail" placeholder="Type your message here"></textarea>
+                            <div id='messagesDiv'></div>
+                                    <input type='text' id='nameInput' placeholder='Name'>
+                                    <input type='text' id='messageInput' placeholder='Message'>         
                             <br/>
-                            <button name="save"></button>
+                            
                         </section>
                     </section>
                 </iron-pages>
             </div>
         </paper-header-panel>
-        </template>    
+        </template> 
     </body>
 </html>

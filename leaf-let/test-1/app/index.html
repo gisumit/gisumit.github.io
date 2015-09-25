@@ -35,12 +35,11 @@
                 <img class="app-img" src="images/touch/icon-128x128.png">
                 <div class="titlefont">LEAF-LET</div>
                     <span title></span>
-                    <paper-icon-button icon="refresh"></paper-icon-button>
-                    <paper-icon-button icon="search"></paper-icon-button>                    
+                    <paper-icon-button icon="help-outline"></paper-icon-button>                    
                 <paper-tabs selected="{{page}}" valueattr="data-category" class="bottom self-end" style="width: 300px;">
                     <paper-tab class="font" data-category="notice" >NOTICE</paper-tab>
                     <paper-tab class="font" data-category="post" >POST</paper-tab>
-                    <paper-tab class="font" data-category="ems" >LEAF-LET</paper-tab>
+                    <paper-tab class="font" data-category="ems" >ALERT</paper-tab>
                 </paper-tabs>
                 <div class="bottom flex"></div>
             </paper-toolbar>
@@ -50,7 +49,7 @@
                     <section data-category="notice" class="page-container">
                         <section class="page-container">
                             <section>
-                                <p id="lblcurrentmsg"></p>
+                                <p id="lblmsg"></p>
                                 <div class="notice-box" id ="notice-box">
                                     <small class="date-text" id-"date-text">16 Aug 2015</small>
                                     <h1 class="title-text" id="title-text">This is the title of my first notice</h1>
@@ -64,21 +63,39 @@
                             </section>
                         </section>
                     </section>
-                    <section data-category="post" class="page-container center">
-                        <p id="lblcurrentmsg"></p>
+                    <section data-category="post" class="page-container center" style="background-color:#FAFAFA; height: 80vh;">
+                          <p id="lblmsgTab2"></p>
                         <input type="date" placeholder="DATE" name="date">
                         <input type="textbox" name="title" placeholder="Title of Notice">
                         <textarea name="detail" placeholder="Description of Notice"></textarea>
                         <br />
                         <paper-fab icon="close" title="close" class="close"></paper-fab>
-                        <paper-fab icon="done" title="done" class="done"></paper-fab>
+                        <paper-fab icon="send" title="done" class="done"></paper-fab>
                     </section>
-                    <section data-category="ems" class="page-container center">
-                        <p id="lblcurrentmsg"></p>
-                        <input type="textbox" id="txtnewmsg" name="title" placeholder="Enter LEAF-LET">
+                    <section data-category="ems" class="page-container center" style="background-color:#FAFAFA; height: 80vh;">
+                          <p id="lblmsgTab3"></p>
+                    <!--   <input type="textbox" id="txtmsg" name="title" placeholder="Enter LEAF-LET">  -->
+                    <form>
+                        <aside class="container-text">
+                            <paper-input label="Enter Emergency Message " required id="txtmsg" name="title" ></paper-input>
+                        </aside>
                         <br />
-                        <paper-fab icon="close" title="close" class="close"></paper-fab>
-                        <paper-fab icon="done" title="done" class="done" id="btnupdatemsg" onclick="myFunction()"></paper-fab>
+                        <paper-fab icon="close" title="close" class="close" id="btnclose"></paper-fab>
+                        <paper-fab icon="send" title="done" class="done" id="btnsend"></paper-fab>
+                        </form>
+                        <script>
+			  var lblmsg = document.getElementById('lblmsg'),
+			      txtmsg = document.getElementById('txtmsg'),
+			      btnsend = document.getElementById('btnsend'),
+			      rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
+			      currentMsg = rootRef.child('currentMsg');
+			   var lblmsgTab2 = document.getElementById('lblmsgTab2'),
+			   	lblmsgTab3= document.getElementById('lblmsgTab3');
+			    btnsend.addEventListener('click', function(){ currentMsg.set(txtmsg.value); txtmsg.value = ''; });
+			    currentMsg.on('value', function(snapshot){ lblmsg.innerText = snapshot.val(); lblmsgTab2.innerText = snapshot.val(); lblmsgTab3.innerText = snapshot.val(); });
+			 var btnclose = document.getElementById('btnclose');
+			    btnclose.addEventListener('click', function(){ txtmsg.value = ''; alert('Emergency Message Descarted...'); });
+			</script>
                     </section>
                 </iron-pages>
             </div>
@@ -86,5 +103,6 @@
 	</template>
 	<script src="script/app.js"></script>
     	<script src="script/load-page.js"></script>
+    		
 </body>
 </html>

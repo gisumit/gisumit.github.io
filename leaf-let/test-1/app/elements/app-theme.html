@@ -22,9 +22,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 p{
     margin-top: 0px;
 }
+paper-input{
+    text-align: left;
+}    
 :root {
-  --dark-primary-color: #FF6A6A;
-  --default-primary-color:#FF6A6A;
+  --dark-primary-color: #26AB61;
+  --default-primary-color:#26AB61;
   --light-primary-color: #C5CAE9;
   --text-primary-color: #ffffff; /*text/icons*/
   --accent-color: #FF4081;
@@ -81,7 +84,9 @@ paper-menu iron-icon {
   padding-bottom: 120px;
   margin-left: 30px;
 }
-
+paper-toolbar.tall {
+    height: 140px;
+}
 paper-menu a {
   text-decoration: none;
   color: var(--menu-link-color);
@@ -129,8 +134,7 @@ paper-fab.close:hover, paper-fab.done:hover{
     border-width: 2px;
 }
 paper-fab.done{
-    color: #00FA9A;
-    border-color: #00FA9A;
+    color: #3f51b5;
 }
 paper-fab.paper-fab-0[mini] {
   ;
