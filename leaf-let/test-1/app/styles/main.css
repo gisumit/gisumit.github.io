@@ -68,15 +68,12 @@ img.app-img {
 	}
 	p {
 	    background-color: #26AB61;
-	    -moz-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
-	    -ms-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
 	    width: 100vw;
 	    padding: 15px 10px;
 	    color: white;
 	    text-transform: uppercase;
 	    text-align: center;
-	    box-shadow: 0 7px 11px rgba(0, 0, 0, 0.29);
-	}
+	  }
 	@media (max-width: 600px) {
 	  .notice-box{
 	    width: 80vw;
