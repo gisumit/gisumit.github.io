@@ -66,8 +66,8 @@ img.app-img {
 	    color: black;
 	    box-shadow: 0 0 8px -1px rgba(0, 0, 0, 0.67);
 	}
-		p {
-	    background-color: #E85151;
+	p {
+	    background-color: #26AB61;
         -webkit-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
         -moz-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
         -ms-background-image: linear-gradient(#03CA7D ,#07D485 , #00B570);
