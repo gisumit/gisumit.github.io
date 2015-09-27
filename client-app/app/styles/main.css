@@ -33,11 +33,7 @@ body {
 }
 img.app-img {
     width: 60px;
-    -webkit-filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
-    filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
-    -ms-filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
-    -moz-filter: drop-shadow(0 0 3px rgb(255,255,255)) grayscale(1);
-}
+    }
 .font{
    font-family: RawengulkSans;  
 }
