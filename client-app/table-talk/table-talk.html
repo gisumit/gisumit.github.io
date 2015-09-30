@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+      <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+      <link rel="import" href="bower_components/paper-styles/demo-pages.html">
+    <link  rel="import" href="bower_components/paper-input/paper-input.html">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <style>
+        div {
+            font-size: 20px;
+            padding: 5px;
+            margin: 7px;
+        }  
+    </style>
+  </head>
+  <body >
+    <div id='messagesDiv'></div>
+      <input placeholder="Name" id='nameInput'></input>
+      <input placeholder="Message" id='messageInput'></input>
+   
+    <script>
+      var myDataRef = new Firebase('https://xr7quf0a9qw.firebaseio-demo.com/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+    </script>
+  </body>
+</html>
+   
