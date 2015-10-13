@@ -66,12 +66,46 @@
                     <section data-category="post" class="page-container center" style="background-color:#FAFAFA; height: 80vh;">
 
                           <p id="lblmsgTab2"></p>
-                        <input type="date" placeholder="DATE" name="date">
-                        <input type="textbox" name="title" placeholder="Title of Notice">
-                        <textarea name="detail" placeholder="Description of Notice"></textarea>
+                        <input type="date" placeholder="DATE" name="date" id="notice_date" required>
+                        <aside class="container-text">
+                            <paper-input label="Title of Notice" required id="notice_title" name="title" ></paper-input>
+                        </aside>
+                        <textarea name="detail" placeholder="Description of Notice" id="notice_details" required></textarea>
                         <br />
                         <paper-fab icon="close" title="close" class="close"></paper-fab>
-                        <paper-fab icon="send" title="done" class="done"></paper-fab>
+                        <paper-fab icon="send" title="done" class="done" id="notice_btn"></paper-fab>
+                        <script>
+                            var notice_date = document.getElementById('notice_date'),
+                                notice_title = document.getElementById('notice_title'),
+                                notice_details = document.getElementById('notice_details'),
+                                rootRef = new Firebase('https://leaf-let.firebaseio.com/'),
+                                node = rootRef.child('node'),
+                                notices_date = node.child('notices_date');
+                                notices_title = node.child('notices_title');
+                                notices_details = node.child('notices_details');
+                            var notice_btn = document.getElementById('notice_btn');
+                            notice_btn.addEventListener('click', function(){
+                                notices_date.set(notice_date.value);
+                                notices_date.value = '';
+                                notices_title.set(notice_title.value);
+                                notices_title.value = '';
+                                notices_details.set(notice_details.value);
+                                notices_details.value = '';
+                            });
+                                /*
+                            var node = new Firebase('https://leaf-let.firebaseio.com/'),
+                                notices = node.child('notices');
+                            var date = document.getElementById('notice_date');
+                            var title = document.getElementById('notice_title');
+                            var detail = document.getElementById('notice_details');
+                            var date_var = date.value;
+                            var title_var = title.value;
+                            var detail_var = detail.value;
+                            var notice_btn = document.getElementById('notice_btn');
+                            notice_btn.addEventListener('click', function(){
+                                notices.push({ ndate: date_var, ntitle: title_var,ndetail: detail_var});
+                            });*/
+                        </script>
                     </section>
                     <section data-category="ems" class="page-container center" style="background-color:#FAFAFA; height: 80vh;">
                           <p id="lblmsgTab3"></p>
