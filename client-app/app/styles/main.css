@@ -62,6 +62,14 @@ img.app-img {
 	  h1.title-text {
 	    margin-top: 1px;
 	}
+.art {
+    margin: 0;
+    width: 390px;
+    padding: 25px;
+    height: 600px;
+    background-color: WHITE;
+    OVERFLOW: auto;
+}
 	  .notice-box:nth-child(even) {
 	    background-color: #D8D8D8;
 	    color: black;

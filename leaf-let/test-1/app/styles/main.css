@@ -105,6 +105,14 @@ textarea[name="detail"]{
     margin: 10px 13% 0;
     background-color: transparent;
 }
+.art {
+    margin: 0;
+    width: 390px;
+    padding: 25px;
+    height: 600px;
+    background-color: WHITE;
+    OVERFLOW: auto;
+}
 .close{
     color: #FF6A6A;
 }
