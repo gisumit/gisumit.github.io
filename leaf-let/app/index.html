@@ -65,6 +65,7 @@
                     <paper-tab class="font" data-category="notice" >NOTICE</paper-tab>
                     <paper-tab class="font" data-category="post" >POST</paper-tab>
                     <paper-tab class="font" data-category="ems" >ALERT</paper-tab>
+                    <paper-tab class="font" data-category="unsrc" id="big">EMAIL</paper-tab>
                 </paper-tabs>
                 <div class="bottom flex"></div>
             </paper-toolbar>
@@ -157,6 +158,11 @@
 			 var btnclose = document.getElementById('btnclose');
 			    btnclose.addEventListener('click', function(){ txtmsg.value = ''; alert('Emergency Message Descarted...'); });
 			</script>
+                    </section>
+                     <section data-category="unsrc" class="page-container center">
+                        <section class="page-container">
+                           <a class="s-link" href="https://leaf-email.firebaseapp.com/"><paper-button tabindex="2" raised>UNSUBSCRIBE CLIENT</paper-button></a>
+                        </section>
                     </section>
                 </iron-pages>
             </div>

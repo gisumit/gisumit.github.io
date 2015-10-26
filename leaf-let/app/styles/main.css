@@ -17,6 +17,11 @@
     background-color: rgba(154, 154, 154, 0.6);
     color: black;
 }
+a.s-link>* {
+    background: white;
+    color: black;
+    margin: 49px;
+}
 body {
     background-color: #FAFAFA;
     background-image: url('../images/touch/notice-bg.png');
@@ -114,6 +119,12 @@ textarea[name="detail"]{
     height: 600px;
     background-color: WHITE;
     OVERFLOW: auto;
+}
+@media (max-width:600px){
+    .art{
+        width: 100vw;
+        height: 100vh;
+    }
 }
 .close{
     color: #FF6A6A;
