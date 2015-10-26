@@ -85,7 +85,10 @@
                         			   var date_text = document.getElementById('date_text'),
                                           title_text = document.getElementById('title_text'),
                                           brife_text = document.getElementById('brife_text');
-                                      var notices_date, notices_title, notices_details;
+                                      var node = rootRef.child('node'),
+                                            notices_date = node.child('notices_date');
+                                            notices_title = node.child('notices_title');
+                                            notices_details = node.child('notices_details');
                                     notices_date.on('value', function(snapshot){ date_text.innerText = snapshot.val(); });
                                     notices_title.on('value', function(snapshot){ title_text.innerText = snapshot.val(); });
                                     notices_details.on('value', function(snapshot){ brife_text.innerText = snapshot.val(); });
