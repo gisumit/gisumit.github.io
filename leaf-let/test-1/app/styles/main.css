@@ -60,7 +60,9 @@ img.app-img {
 	    font-size: 10px;
 	}
 	  h1.title-text {
-	    margin-top: 1px;
+	    margin-top: 17px;
+	    text-transform: capitalize;
+	    font-size: 28px;
 	}
 	  .notice-box:nth-child(even) {
 	    background-color: #D8D8D8;
