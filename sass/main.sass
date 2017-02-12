@@ -2,6 +2,10 @@
 $blue: #00BCD4
 $red: #f98b8b
 
+$scroller-height: 6px
+$scroller-color: $blue
+$scroller-background: #000
+$body-background: white
 // mixins
 	
 
@@ -12,6 +16,12 @@ $red: #f98b8b
 
 
 // CRP START
+.scroller
+	position: fixed
+	top: 0
+	height: 0
+	width: 100%
+	background: $body-background
 
 
 
@@ -30,7 +40,6 @@ svg.svg-triangle
 	position: absolute
 	will-change: transform
 	transform-origin: center center
-	z-index: -5
 	
 
 header
@@ -80,16 +89,7 @@ footer
 
 
 // Responsive
-//@media (min-width: 200px)
-//	.svg-box
-//		display: none
-//
-//	#svg4156
-//		display: block
-//		position: relative
-//		left: initial
-//		z-index: -5
-//		margin: 20px auto 0
+
 	
 @media (min-width: 601px)
 	.svg-box

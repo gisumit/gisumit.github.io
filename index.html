@@ -27,17 +27,19 @@
 
 	<style>
 		*,*:after,*:before {box-sizing: border-box;-webkit-transition: all 320ms ease-out;transition: all 320ms ease-out;margin: 0;}
-		body {background-color: black;color: #fbfbfb;padding: 10px 20px;}
+		body {background-color: black;color: #fbfbfb;}
+		body{background: linear-gradient(to right top, #00bcd4 50%, #000 50%);background-size: 100% calc(100% - 100vh + 6px);background-repeat: no-repeat;}
+		body:before {content: '';position: fixed;top: 6px;bottom: 0;width: 100%;z-index: -1;background: rgb(0, 0, 0);}
 		a {color: #00BCD4;} p{margin-bottom: 20px;}
 		header,section,footer {max-width: 800px;font-size: 16px;line-height: 1.35em;font-family: monospace;margin-bottom: 25px;margin-left: auto;margin-right: auto;text-align: left;font-weight: lighter;-webkit-font-smoothing: antialiased;}
 		.svg-box {display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%;height: 420px;z-index: -10;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
-		@media (min-width: 200px) {.svg-box {display: none;}#svg4156 {display: block;position: relative;left: initial;z-index: -5;margin: 20px auto 0;}}
+		@media (min-width: 200px) {main{padding: 0 20px;}.svg-box {display: none;}#svg4156 {display: block;position: relative;left: initial;margin: 20px auto 0;}}
 	</style>
 	<link rel="preload" as="style" href="./sass/main.min.css" onload="this.rel='stylesheet'">
 </head>
 
 <body>
-
+	<div class="scroller"></div>
 	<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150.00001 150.00001" id="svg4156" version="1.1">
     <g id="layer1" transform="translate(0,-902.36214)">
       <ellipse cy="948.50409" cx="118.38345" id="circle4180" style="opacity:1;fill:#00bcd4;fill-opacity:1;stroke:#00bcd4;stroke-width:3.36338425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:14.99999714;stroke-opacity:1" rx="16.633774" ry="16.151985" />
