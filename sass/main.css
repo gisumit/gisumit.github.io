@@ -1,152 +1,91 @@
-/* line 14, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
-::-moz-selection {
-	background: #f98b8b;
-}
-
+/* line 14, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 ::selection {
-	background: #f98b8b;
-}
+  background: #f98b8b; }
 
-
-/* line 19, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 19, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 .scroller {
-	position: fixed;
-	top: 0;
-	height: 0;
-	width: 100%;
-	background: white;
-}
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: white; }
 
-
-/* line 33, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 33, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 main {
-	margin-top: 20px;
-	z-index: 5;
-}
+  margin-top: 20px;
+  z-index: 5; } 
 
-
-/* line 39, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 38, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 svg#triangle,
 svg.svg-triangle {
-	position: absolute;
-	will-change: transform;
-	-webkit-transform-origin: center center;
-	transform-origin: center center;
-}
+  position: absolute;
+  will-change: transform;
+  transform-origin: center center; }
 
-
-/* line 45, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 45, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 header {
-	-webkit-column-count: 2;
-	-moz-column-count: 2;
-	column-count: 2;
-	-webkit-column-width: 350px;
-	-moz-column-width: 350px;
-	column-width: 350px;
-	-webkit-column-gap: 50px;
-	-moz-column-gap: 50px;
-	column-gap: 50px;
-	-webkit-column-rule: 1px solid white;
-	-moz-column-rule: 1px solid white;
-	column-rule: 1px solid white;
-	text-align: justify;
-}
+  column-count: 2;
+  column-width: 350px;
+  column-gap: 50px;
+  column-rule: 1px solid white;
+  text-align: justify; }
 
-
-/* line 52, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 52, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 .link {
-	display: inline-block;
-	position: relative;
-	text-decoration: none;
-	padding-bottom: 3px;
-}
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 3px; }
 
-
-/* line 59, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 59, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 .link-wrapper {
-	display: inline-block;
-}
+  display: inline-block; }
 
-
-/* line 63, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 63, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 .hover:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 3px;
-	-webkit-transform: scaleY(0);
-	transform: scaleY(0);
-	background-color: #00BCD4;
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
-	transition: transform 0.3s, -webkit-transform 0.3s;
-}
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  background-color: #00BCD4;
+  transition: transform 0.3s; }
 
-
-/* line 76, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 76, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 .hover:hover:after {
-	-webkit-transform: scaleY(1);
-	transform: scaleY(1);
-}
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1); }
 
-
-/* line 81, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
+/* line 81, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
 footer {
-	margin-bottom: 150px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-
-/* line 86, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-
-footer> div {
-	margin: 10px 20px 0 0;
-}
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  /* line 86, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
+  footer > div {
+    margin: 10px 20px 0 0; }
 
 @media (min-width: 601px) {
-	/* line 95, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-	.svg-box {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-	}
-}
+  /* line 94, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
+  .svg-box {
+    display: flex; } }
 
 @media (min-width: 900px) {
-	/* line 99, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-	#svg4156 {
-		position: absolute;
-		top: 10%;
-		left: 8%;
-		margin: inherit;
-	}
-}
+  /* line 98, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
+  #svg4156 {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    margin: inherit; } }
 
 @media (min-width: 1320px) {
-	/* line 106, C:/Users/Sumit/Documents/js-sandbox/js--rotate/sass/main.sass */
-	#svg4156 {
-		position: -webkit-sticky;
-		position: sticky;
-	}
-}
+  /* line 105, C:/Users/Sumit/Documents/js-sandbox/gisumit.github.io/sass/main.sass */
+  #svg4156 {
+    position: sticky; } }
+
+/*# sourceMappingURL=main.css.map */
