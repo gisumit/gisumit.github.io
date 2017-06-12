@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Touch Events</title>
-    <link rel="stylesheet" href="./style.css">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Draw : Canvas App</title>
+    <link rel="stylesheet" href="./css/draw.min.css.gz">
+    <script async src="./js/draw.js"></script>
 </head>
+
 <body>
-    
-    <input type="color" id="color" title="select color">
-    <canvas width="500px" height="500px"></canvas>
-    <script src="./touch.js"></script>
+    <div class="nav">
+            <input type="color" class="circle">
+            <div class="circle" data-color="#EC407A"></div>
+            <div class="circle" data-color="#FF7043"></div>
+            <div class="circle" data-color="#FFEB3B"></div>
+            <div class="circle" data-color="#279e2c"></div>
+            <div class="circle" data-color="#2196F3"></div>
+            <div class="circle" data-color="#283593"></div>
+            <div class="circle" data-color="#ffffff"></div>
+    </div>
+    <canvas id="draw"></canvas>
 </body>
+
 </html>
