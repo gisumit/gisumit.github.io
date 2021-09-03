@@ -31,97 +31,69 @@
             --danger-color: #E91E63;
             --app-font: 'roboto';
             --battery-level: 0%;
-            --app-vertical-layout: {
-                display: flex;
-                flex-direction: column;
-            };
-            --absolute-center: {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            };
-            --main-container: {
-                flex: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            };
-            --toolbar-title-theme: {
-                color: white;
-            };
-            --toolbar-ic-theme: {
-                width: 46px;
-                height: 46px;
-                border-radius: 50%;
-                @apply --absolute-center;
-            };
-            --toolbar-theme: {
-                background-color: var(--primary-color);
-                /*height: 56px;*/
-                min-height: 56px;
-                align-items: center;
-                display: flex;
-                width: 100%;
-                padding-left: 24px;
-                padding-right: 24px;
-            };
-            --battery-box: {
-                @apply --app-vertical-layout;
-                align-items: center;
-            };
-            --battery-tip: {
-                width: 80px;
-                height: 10px;
-            };
-            --battery-body: {
-                width: 160px;
-                height: 313px;
-                @apply --absolute-center;                
-            };
-            --battery-per: {
-                color: var(--app-background-color); 
-                display: flex;
-                align-items: baseline; 
-                font-size: 80px;
-            };
         }
         #app {
-            @apply --app-vertical-layout;
+            display: flex;
+            flex-direction: column;
         }
         .toolbar {
-            @apply --toolbar-theme;
+            background-color: var(--primary-color);
+            min-height: 56px;
+            align-items: center;
+            display: flex;
+            width: 100%;
+            padding-left: 24px;
+            padding-right: 24px;
             justify-content: space-between;
         }                
         .toolbar>.title {
-            @apply --toolbar-title-theme;
+            color: white;
         }
         .toolbar > .ic-box {
             cursor: pointer;
-            @apply --toolbar-ic-theme;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .toolbar > .ic-box:active,
          .toolbar > .ic-box:hover{
             background-color: #11398e;
         }
         .main-container{
-            @apply --main-container;
+            flex: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-weight: 100;
             min-height: 330px;
         }
 
         .battery-box {
-            @apply --battery-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .battery-tip {
-            @apply --battery-tip;
+             width: 80px;
+            height: 10px;
             background-color: var(--primary-color);
         }
         .battery-body {
-            @apply --battery-body;
+             width: 160px;
+            height: 313px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background: linear-gradient(0deg, var(--primary-color) var(--battery-level), rgba(2, 166, 242, 0.24) var(--battery-level) );
         }
         .battery-per {
-            @apply --battery-per;             
+            color: var(--app-background-color); 
+            display: flex;
+            align-items: baseline; 
+            font-size: 80px;
         }
         .battery-per > sup {
             font-size: 25%;
