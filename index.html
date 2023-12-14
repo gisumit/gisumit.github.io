@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sumit Ingole</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
 	<style>
+		:root {
+			--sec-text-color: #aaa;
+			--pri-text-color: white;
+			--bg-color: #000;
+		}
+
+		.sub-text {
+			color: var(--sec-text-color);
+			font-weight: 300;
+    		line-height: 1.5;
+		}
+
 		body {
-			width: 100vw;
+			background: var(--bg-color);
+			padding: 0;
+			margin: 0;
+			color: var(--pri-text-color);
+			font-family: 'Inter', sans-serif;
+		}
+
+		main {
+			max-width: 980px;
+			margin: 0 auto;
 			height: 100vh;
+		} 
 
-			background: #000;
-			color: white;
-			font-family: 'arial';
+		header {
+			margin: 5rem 0 2rem 0;
+		}
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
+		h3, h3.name {
+			font-size: 16px;
+			font-weight: normal;
+		}
+		h3.name {
+			margin-bottom: 8px;
+		}
+		h3.name + p {
+			font-size: 16px;
+			color: var(--sec-text-color);
+			margin: 0;
+		}
+		h3.name + p > a {
+			color: inherit;
+			text-decoration: none;
+		}
+		.summary {
+			margin-top: 4rem;
 		}
 	</style>
 </head>
-
 <body>
-	<h2>under construction</h2>
-</body>
+	<main>
+		<header>
+			<h3 class="name">Sumit Ingole</h3>
+			<p class="sub-text">Senior Product Designer <a href="https://redhat.com">@Red Hat</a></p>
+		</header>
 
+		<div class="summary">
+			<h3 class="name">Summary</h3>
+			<p class="sub-text"> As a product designer, I understand user needs, create user-friendly designs, and collaborate with teams 
+				to develop and improve products. Create prototypes, ensure accessibility, and focus on design quality 
+				to provide a positive user experience while staying updated with design trends.
+			</p>
+		</div>
+	</main>
+</body>
 </html>
