@@ -8,10 +8,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
 	<style>
 		/* WIP */
-		span.label {
+		span.pill {
 			position: fixed;
 			top: 1rem;
 			right: 1rem;
@@ -24,16 +25,32 @@
 		}
 
 		:root {
-			--sec-text-color: #aaa;
-			--pri-text-color: white;
-			--bg-color: #000;
-			--bg-sec-color: #18181b;
-			--border-color: #27272a;
+			--sec-text-color: #A3A3A3;
+			--pri-text-color: black;
+			--bg-color: #fff;
+			--pri-text-family: 'Red Hat Display', 'sans-serif';
+			--sec-text-family: 'Red Hat Text', sans-serif;
+		}
+
+		p.label{
+			font-size: 16px;
+			font-weight: medium;
+			color: var(--sec-text-color);
+			margin: 0 0 .5rem 0;
+			font-family: var(--pri-text-family);
 		}
 
 		.sub-text {
 			color: var(--sec-text-color);
 			font-weight: 400;
+		}
+
+		.label-data {
+			font-size: 18px;
+			font-weight: normal;
+			font-family: var(--sec-text-family);
+			margin: 0 0 2rem 0;
+			max-width: 800px;
 		}
 
 		body {
@@ -50,33 +67,7 @@
 			max-width: 1440px;
 			margin: 0 auto;
 			height: 100vh;
-			padding: 0 1rem;
-		}
-
-		h1 {
-			font-size: 48px;
-			font-weight: 500;
-			margin-bottom: .5rem;
-		}
-
-		.job-title {
-			margin-top: 0;
-			margin-bottom: 2rem;
-		}
-
-		h6 {
-			font-size: 18px;
-			font-weight: normal;
-			color: var(--sec-text-color);
-			margin-bottom: .5rem;
-		}
-
-		h5 {
-			font-size: 24px;
-		}
-
-		.info {
-			max-width: 800px;
+			padding: 2rem;
 		}
 
 		.selected-work-wrap>div {
@@ -87,20 +78,12 @@
 		figure {
 			display: flex;
 			flex-flow: column;
-			max-width: 48%;
+			max-width: 100%;
 			margin: 0;
+			margin-top: 1rem;
 			margin-right: 1rem;
 			margin-bottom: 1rem;
 			position: relative;
-		}
-
-		figcaption {
-			background-color: #222222ba;
-			color: #fff;
-			padding: 3px;
-			position: absolute;
-			bottom: 0;
-			margin: 8px;
 		}
 
 		@media only screen and (max-width: 900px) {
@@ -113,19 +96,29 @@
 
 <body>
 	<main>
-		<span class="label">&middot; WIP</span>
-		<h1>Sumit Ingole</h1>
-		<h5 class="sub-text job-title">Product Designer @ Red Hat
-		</h5>
-		<h6 class="sub-text info">As a product designer, I understand user needs, create user-friendly designs, and
-			collaborate with teams to
-			develop and improve products. Create prototypes, ensure accessibility, and focus on design quality to
-			provide a
-			positive user experience while staying updated with design trends.
-		</h6>
-		<section class="selected-work-wrap">
-			<h6>Selected work</h6>
+		<span class="pill">&middot; WIP</span>
+		<p class="label">Name</p>
+		<p class="label-data">Sumit Ingole</p>
 
+		
+		<p class="label" >Title</p>	
+		<p class="label-data" style="position: relative;">Senior Product Designer @ 
+			<a href="http://redhat.com" style="position: absolute; margin-left: 1rem; top: -3px;">
+			<svg width="43" height="32" viewBox="0 0 43 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M28.2222 18.4444C31.0022 18.4444 35.0244 17.8711 35.0244 14.5644C35.0328 14.3092 35.0096 14.054 34.9556 13.8044L33.3 6.61333C32.9178 5.03111 32.5822 4.31333 29.8044 2.92444C27.6422 1.82 22.9467 0 21.5556 0C20.2622 0 19.8778 1.67556 18.3444 1.67556C16.86 1.67556 15.7578 0.431111 14.3689 0.431111C13.0356 0.431111 12.1667 1.34 11.4956 3.20889C11.4956 3.20889 9.62667 8.48 9.38667 9.24444C9.34702 9.38459 9.32904 9.52997 9.33333 9.67556C9.33333 11.7244 17.4067 18.4444 28.2222 18.4444ZM35.4556 15.9067C35.84 17.7267 35.84 17.9178 35.84 18.1578C35.84 21.2689 32.3422 22.9956 27.7444 22.9956C17.3333 22.9933 8.24 16.9111 8.24 12.8889C8.2394 12.3287 8.3536 11.7743 8.57556 11.26C4.83778 11.4489 0 12.12 0 16.3822C0 23.3778 16.5756 32 29.7 32C39.7622 32 42.3 27.4489 42.3 23.8556C42.3 21.0289 39.8556 17.82 35.4489 15.9044" fill="#EE0000"/>
+			<path d="M35.4489 15.9044C35.8333 17.7244 35.8333 17.9155 35.8333 18.1555C35.8333 21.2666 32.3355 22.9932 27.7378 22.9932C17.3333 22.9932 8.23999 16.911 8.23999 12.8888C8.23939 12.3286 8.35359 11.7743 8.57555 11.2599L9.38888 9.24658C9.34871 9.3859 9.32998 9.53052 9.33333 9.67547C9.33333 11.7244 17.4067 18.4444 28.2222 18.4444C31.0022 18.4444 35.0244 17.871 35.0244 14.5644C35.0327 14.3092 35.0096 14.0539 34.9555 13.8044L35.4489 15.9044Z" fill="black"/>
+			</svg>
+			</a>
+		</p>
+
+		<p class="label">Summary</p>	
+		<p class="label-data">As a product designer, I understand user needs, create user-friendly designs, and
+			collaborate with teams to develop and improve products. Create prototypes, ensure accessibility, and focus on design quality to
+			provide a positive user experience while staying updated with design trends.</p>
+
+		<p class="label">Selected work</p>	
+		
+		<section class="selected-work-wrap">
 			<div>
 				<figure>
 					<img src="./Designer-stories/Customer-support.png" alt="Red Hat Customer Support" />
