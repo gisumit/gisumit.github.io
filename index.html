@@ -53,13 +53,19 @@
 			transform: translateY(12px);
 		}
 
-		.card.top {
+		.label.top {
 			margin-top: 10rem;
 		}
+
 		.card {
 			width: 820px;
 			display: flex;
 			flex-direction: column;
+			margin-top: 3rem;
+		}
+
+		.card.first {
+			margin-top: 1rem;
 		}
 
 		.card>img {
@@ -73,11 +79,13 @@
 		h4.card-title {
     font-size: 20px;
     font-weight: normal;
-    margin: 1rem 0 .5rem 0;
+    margin: 1rem 0 0 0;
+	color: #202124;
 }
 
-p.card-info {
-    margin: 0 0 4rem 0;
+p.card-info, .label {
+    margin: 0;
+	color: #5f6368;
 }
 
 .last p.card-info {
@@ -86,7 +94,7 @@ p.card-info {
 
 .info {
     font-size: 12px;
-    color: #607D8B;
+    color: #5f6368;
 }
 	</style>
 </head>
@@ -146,7 +154,8 @@ p.card-info {
 					</defs>
 				</svg> </a>
 		</h1>
-		<div class="card top">
+		<div class="label top">Selected work</div>
+		<div class="card first">
 			<img src="./Designer-stories/Customer-support.png" alt="Red Hat Customer Support">
 			<h4 class="card-title">Red Hat Customer Portal</h4>
 			<p class="card-info">Whether you need issue resolution or just advice, Red Hat Customer Portal provides tools and resources designed to help you find success on your IT journey.</p>
