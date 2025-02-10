@@ -167,6 +167,12 @@ footer {
     background: #ffffff;
     padding: 0 2rem;
 }
+
+footer > .right {
+    display: flex;
+    align-items: center;
+}
+
 .mail {
 	font-size: 2rem;
 	font-family: 'DM sans';
@@ -177,6 +183,16 @@ footer {
 .linkdin-link  > img{
 	width: 50px;
     display: block;
+}
+
+a.btn.resume {
+    background: #111111;
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    border-radius: 2rem;
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
 }
 </style>
 </head>
@@ -385,9 +401,13 @@ footer {
 
 		<footer>
 			<a href="mailto:gsumitingole@gmail.com" rel="noopener" class="mail">gsumitingole@gmail.com</p>
-			<a href="https://www.linkedin.com/in/sumit-ingole-429424240/" target="_blank" class="linkdin-link">
+			<div class="right">
+				<a class="btn resume" href="https://drive.google.com/file/d/1_ODM9P9KXcwn8hwVYm3aKMYRYuYAf7pC/view" target="_blank">Resume</button>
+				<a href="https://www.linkedin.com/in/sumit-ingole-429424240/" target="_blank" class="linkdin-link">
 				<img src="https://framerusercontent.com/images/RYuwqCxHlxrSfIOO7JZreY9YX9Q.png" alt="linkdin">
 			</a>
+
+			</div>
 		</footer>
 	</main>
 </body>
