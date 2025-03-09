@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>archive</title>
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55?styles=16022,15981" rel="stylesheet">
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Helvetica Neue', sans-serif;
+			scroll-behavior: smooth;
+		}
+
+		nav {
+			margin: 3rem auto 0;
+			padding: 8px;
+			font-size: 14px;
+			height: 32px;
+			border-radius: 50px;
+			max-width: 620px;
+			border: 1px solid #D2D2D2;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		nav img {
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			margin-right: 8px;
+		}
+
+		nav .left, nav .right {
+			display: flex;
+			align-items: center;
+		}
+
+		nav .name {
+			font-weight: light;
+		}
+
+		.pill {
+			padding: 6px 12px;
+			border-radius: 50px;
+			text-decoration: none;
+			color: #000;
+			transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+
+		nav .pill.active{
+			box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+			border: 1px solid #D2D2D2;
+		}
+
+        .card.big {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 420px 420px 1fr;
+            grid-gap: 1rem;
+        }
+
+        .card {
+            margin: 2rem;
+            border: 1px solid #D2D2D2;
+            border-radius: 32px;
+            padding: 32px;
+        }
+
+        .card.big img {
+            width: 420px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .wrap small {
+            display: block;
+            text-align: center;
+            margin-top: 8px;
+            color: #707070;
+        }
+
+        .info h2 {
+            font-size: 18px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .info p {
+            font-size: 14px;
+            margin: 8px 0;
+            color: #707070;
+            max-width: 420px;
+        }
+
+        .card.tshirt img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .rbac img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .col-2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+        }
+
+        .col-2-grid .card {
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            margin-right: 1rem;
+        }
+
+        .col-2-grid .card.last {
+            margin-left: 0;
+            background: black;
+            display: grid;
+            place-content: center;
+        }
+
+        .col-2-grid .card.last img {
+            width: 268px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+		.thanks {
+			display: grid;
+			place-content: center;
+			margin: 2rem;
+			height: 100px;
+			font-size: 14px;
+			color: #D2D2D2;
+		}
+
+	</style>
+</head>
+<body>
+    <nav>
+		<div class="left">
+			<img src="./Designer-stories/sumit.jpg" alt="sumit ingole photo" srcset="">
+			<p class="name">Sumit Ingole</p>
+		</div>
+		<div class="right">
+			<a href="/index.html" class="pill">About me</a>
+			<!-- <a href="" class="pill">Case study</a> -->
+			<a href="#" class="pill active">Archive</a>
+		</div>	
+	</nav>
+
+    <div class="card big">
+        <div class="wrap">
+            <img src="./Archive/Chat V1.png" alt="chat ui option 1" srcset="">
+            <small>option 1</small>
+        </div>
+        <div class="wrap">
+            <img src="./Archive/Chat V2.png" alt="chat ui option 2" srcset="">
+            <small>option 2</small>
+        </div>
+
+        <div class="info">
+            <h2>Customer support panel</h2>
+            <p>a simple interface that can be used in any application. It has two versions, one with a simple chat interface and the other with a more detailed chat interface.</p>
+        </div>
+    </div>
+
+    <div class="card rbac">
+        <img src="./Archive/RBAC-user view.png" alt="SPAship RBAC" srcset="">
+        <div class="info">
+            <h2>Role based access control for SPAship</h2>
+        </div>
+    </div>
+
+    <div class="col-2-grid">
+        <div class="card tshirt">
+            <img src="./Archive/TechGENIE Option 4 black & white.png" alt="TechGENIE t-shirt design">
+            <div class="info">
+                <h2>TechGENIE t-shirt design</h2>
+                <p>an illustration of a AI, Sustainability & Nature. The design is made in black and white colors.</p>
+            </div>
+        </div>
+
+        <div class="card last">
+            <img src="./Archive/labels.png" alt="dark theme labels/pills" srcset="">
+        </div>
+    </div>
+    
+
+    <div class="thanks">
+		thanks for scrolling
+	</div>
+</body>
+</html>
