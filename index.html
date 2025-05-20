@@ -12,6 +12,7 @@
 			padding: 0;
 			font-family: 'Helvetica Neue', sans-serif;
 			scroll-behavior: smooth;
+			--ai-border-color-gradient: linear-gradient(90deg, #34A853 0%, #4285F4 100%);
 		}
 
 		nav {
@@ -203,6 +204,19 @@
 			font-size: 14px;
 			color: #D2D2D2;
 		}
+
+		.pill.sm.ai {
+			background: #833AB4;
+			background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+			color: #fff;
+			border: none !important;
+		}
+
+		.project-info {
+			margin: 2rem 0 0 0;
+			font-size: 14px;
+    		margin-bottom: 16px;
+		}
 	</style>
 </head>
 
@@ -230,6 +244,25 @@
 			See how I helped Red Hat increase case deflection by 14% in Q4Y2024
 		</a>
 		<h1>Senior Product Designer creating digital experience for humans</h1>
+	</div>
+
+	<div class="card">
+		<div class="head">
+			<p class="title">Red Hat Ask</p>
+			<div class="pill-group">
+				<div class="pill sm ai">AI</div>
+				<div class="pill sm">UX Research</div>
+				<div class="pill sm">UI Design & Design System</div>
+				<div class="pill sm">Data Driven Design</div>
+			</div>
+			<div class="project-info">
+				RH Ask is the intelligent front door for the customers <br/>
+it is capable of Retrieval and relevance Summarization & Multi-turn conversations <br/>
+it supports 10+ language <br/>
+Features: Citation, Feedback - thumbs up down, confidence score for results, graceful errors, chat history - share, download etc. <br/>
+			</div>
+		</div>
+		<img src="./Designer-stories/RH-ask.png" alt="Red Hat Ask" srcset="">
 	</div>
 
 	<div class="card">
