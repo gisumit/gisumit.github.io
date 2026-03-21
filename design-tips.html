@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#EE0000">
+	<title>Design Tips - Sumit Ingole</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0 auto;
+			max-width: 123.25rem;
+			font-family: "Geist", sans-serif;
+			color: #1a1a1a;
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 16px 24px;
+			position: sticky;
+			top: 0;
+			background-color: white;
+			font-size: 1rem;
+			font-weight: 600;
+			letter-spacing: -0.5px;
+		}
+
+		nav .right {
+			display: flex;
+			gap: 24px;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		nav a.active {
+			color: #EE0000;
+		}
+
+		.page-header {
+			padding: 6rem 24px 3rem;
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+
+		.page-header h1 {
+			font-size: 48px;
+			font-weight: 500;
+			letter-spacing: -3.14px;
+		}
+
+		.page-header p {
+			margin-top: 1rem;
+			font-size: 18px;
+			color: #8E8E93;
+			letter-spacing: -0.3px;
+			line-height: 1.6;
+		}
+
+		.filter-bar {
+			display: flex;
+			align-items: center;
+			gap: 0;
+			padding: 4px;
+			max-width: 1024px;
+			margin: 0 auto;
+			border: 1px solid #D2D2D2;
+			border-radius: 50px;
+			width: fit-content;
+		}
+
+		.filter-pill {
+			padding: 12px 16px;
+			border-radius: 50px;
+			border: none;
+			background: none;
+			font-family: "Geist", sans-serif;
+			font-size: 14px;
+			font-weight: 400;
+			color: #1a1a1a;
+			cursor: pointer;
+			transition: 0.2s ease;
+			white-space: nowrap;
+		}
+
+		.filter-pill:hover {
+			background: #F2F2F7;
+		}
+
+		.filter-pill.active {
+			background: #f5f5f5;
+		}
+
+		.tips-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+			gap: 1.5rem;
+			padding: 2rem 24px 4rem;
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+
+		.tip-card.hidden {
+			display: none;
+		}
+
+		.tip-card {
+			border: 1px solid #E5E5EA;
+			border-radius: 16px;
+			padding: 32px;
+			transition: box-shadow 0.2s ease;
+		}
+
+		.tip-card:hover {
+			box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+		}
+
+		.tip-number {
+			font-size: 13px;
+			font-weight: 600;
+			color: #EE0000;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+		}
+
+		.tip-card h2 {
+			font-size: 22px;
+			font-weight: 600;
+			letter-spacing: -0.8px;
+			margin: 12px 0 8px;
+		}
+
+		.tip-card p {
+			font-size: 15px;
+			line-height: 1.65;
+			color: #636366;
+		}
+
+		.tag {
+			display: inline-block;
+			margin-top: 16px;
+			padding: 4px 10px;
+			font-size: 12px;
+			font-weight: 500;
+			border-radius: 6px;
+			background: #F2F2F7;
+			color: #8E8E93;
+		}
+
+		.tip-card .ref {
+			display: block;
+			margin-top: 12px;
+			font-size: 13px;
+			color: #8E8E93;
+		}
+
+		.tip-card .ref a {
+			color: #636366;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+		}
+
+		.tip-card .ref a:hover {
+			color: #1a1a1a;
+		}
+
+		@media screen and (max-width: 768px) {
+			.filter-bar {
+				overflow-x: auto;
+				margin: 0 16px;
+			}
+
+			.page-header h1 {
+				font-size: 32px;
+				letter-spacing: -1.14px;
+			}
+
+			.tips-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<div class="left">
+			<a href="./index.html">Sumit Ingole</a>
+		</div>
+		<div class="right">
+			<a href="./design-tips.html" class="active">Design Tips</a>
+			<a href="https://www.linkedin.com/in/sumit-ingole-429424240/" target="_blank"
+				rel="noopener noreferrer">Linkedin</a>
+		</div>
+	</nav>
+
+	<div class="page-header">
+		<h1>Design Tips</h1>
+		<p>A collection of practical design principles and tips I've picked up over the years working on product design.</p>
+	</div>
+
+	<div class="filter-bar">
+		<button class="filter-pill active" data-category="all">All</button>
+		<button class="filter-pill" data-category="Process">Process</button>
+		<button class="filter-pill" data-category="Layout">Layout</button>
+		<button class="filter-pill" data-category="Typography">Typography</button>
+		<button class="filter-pill" data-category="UX">UX</button>
+		<button class="filter-pill" data-category="Visual Design">Visual Design</button>
+		<button class="filter-pill" data-category="Accessibility">Accessibility</button>
+		<button class="filter-pill" data-category="Content">Content</button>
+		<button class="filter-pill" data-category="Iconography">Iconography</button>
+	</div>
+
+	<div class="tips-grid">
+		<div class="tip-card">
+			<span class="tip-number">Tip 01</span>
+			<h2>Start with the problem, not the pixels</h2>
+			<p>Before opening Figma, write down the user problem you're solving. A clear problem statement keeps the design focused and prevents feature creep.</p>
+			<span class="tag">Process</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 02</span>
+			<h2>Use an 8px spacing system</h2>
+			<p>Stick to multiples of 8 for all spacing and sizing. It creates visual consistency, aligns to most device grids, and makes developer handoff painless.</p>
+			<span class="tag">Layout</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 03</span>
+			<h2>Limit your type scale</h2>
+			<p>Use no more than 4–5 font sizes in a project. A constrained type scale creates hierarchy without visual noise and keeps your UI feeling cohesive.</p>
+			<span class="tag">Typography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 04</span>
+			<h2>Design for the empty state first</h2>
+			<p>Empty states are a user's first impression. Design them with helpful guidance, illustrations, or calls to action — not just blank screens.</p>
+			<span class="tag">UX</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 05</span>
+			<h2>Use color with intention</h2>
+			<p>Reserve saturated colors for interactive elements and status indicators. Let neutral tones do the heavy lifting so accent colors carry meaning.</p>
+			<span class="tag">Visual Design</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 06</span>
+			<h2>Test with real content</h2>
+			<p>Lorem ipsum hides layout problems. Use real names, real data lengths, and edge cases early. Your design should survive the messiness of actual content.</p>
+			<span class="tag">Process</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 07</span>
+			<h2>Prioritize accessibility from day one</h2>
+			<p>Check color contrast ratios, use semantic HTML, and ensure keyboard navigation works. Accessibility isn't a feature — it's a quality baseline.</p>
+			<span class="tag">Accessibility</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 08</span>
+			<h2>Reduce cognitive load</h2>
+			<p>Every extra element on screen competes for attention. Remove anything that doesn't directly help the user complete their task. When in doubt, simplify.</p>
+			<span class="tag">UX</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 09</span>
+			<h2>Learn to write well</h2>
+			<p>The words in your UI matter more than the layout. Clear, concise microcopy reduces confusion and builds trust faster than any visual polish.</p>
+			<span class="tag">Content</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 10</span>
+			<h2>Icons should be instantly recognizable</h2>
+			<p>Icons should be simple and intuitive so users can understand them instantly without relying on tooltips.</p>
+			<span class="ref">→ <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank">Jakob Nielsen's usability heuristics: "Recognition rather than recall"</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 11</span>
+			<h2>If users must hover to understand, redesign</h2>
+			<p>If users must hover over an icon to understand it, the design introduces unnecessary cognitive load and slows interaction.</p>
+			<span class="ref">→ <a href="https://sensible.com/dont-make-me-think/" target="_blank">Don't Make Me Think by Steve Krug</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 12</span>
+			<h2>Avoid abstract icons for key actions</h2>
+			<p>Avoid abstract or unfamiliar icons for key actions — users should not have to interpret meaning.</p>
+			<span class="ref">→ <a href="https://www.nngroup.com/articles/icon-usability/" target="_blank">Nielsen Norman Group research on icon usability</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 13</span>
+			<h2>Leverage existing mental models</h2>
+			<p>Use widely recognized patterns (e.g., search, menu, delete) to leverage existing mental models.</p>
+			<span class="ref">→ <a href="https://www.nngroup.com/articles/ten-usability-heuristics/#4-consistency-and-standards" target="_blank">Consistency and standards heuristic by Jakob Nielsen</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 14</span>
+			<h2>Pair unclear icons with labels</h2>
+			<p>When an icon is not universally clear, pair it with a label to improve comprehension and accessibility.</p>
+			<span class="ref">→ <a href="https://www.nngroup.com/articles/icon-usability/" target="_blank">Nielsen Norman Group — Icon Usability guidelines</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 15</span>
+			<h2>Tooltips should support, not replace clarity</h2>
+			<p>Tooltips should support, not replace, clarity. Relying on them for basic understanding indicates weak visual communication.</p>
+			<span class="ref">→ <a href="https://www.wiley.com/en-us/About+Face%3A+The+Essentials+of+Interaction+Design-p-9781118766576" target="_blank">About Face: The Essentials of Interaction Design by Alan Cooper</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+
+		<div class="tip-card">
+			<span class="tip-number">Tip 16</span>
+			<h2>Keep icon usage consistent across screens</h2>
+			<p>Inconsistent icon usage across screens creates confusion and reduces user trust.</p>
+			<span class="ref">→ <a href="https://www.basicbooks.com/titles/don-norman/the-design-of-everyday-things/9780465050659/" target="_blank">The Design of Everyday Things by Don Norman</a></span>
+			<span class="tag">Iconography</span>
+		</div>
+	</div>
+
+	<script>
+		const pills = document.querySelectorAll('.filter-pill');
+		const cards = document.querySelectorAll('.tip-card');
+
+		function filterByCategory(category) {
+			cards.forEach(card => {
+				if (category === 'all') {
+					card.classList.remove('hidden');
+				} else {
+					const tag = card.querySelector('.tag').textContent;
+					card.classList.toggle('hidden', tag !== category);
+				}
+			});
+		}
+
+		pills.forEach(pill => {
+			pill.addEventListener('click', () => {
+				pills.forEach(p => p.classList.remove('active'));
+				pill.classList.add('active');
+				filterByCategory(pill.dataset.category);
+			});
+		});
+	</script>
+</body>
+
+</html>
