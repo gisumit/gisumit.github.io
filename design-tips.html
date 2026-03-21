@@ -74,16 +74,18 @@
 			line-height: 1.6;
 		}
 
-		.filter-bar {
-			display: flex;
-			align-items: center;
-			gap: 0;
-			padding: 4px;
+		.filter-wrap {
 			max-width: 1024px;
 			margin: 0 auto;
+			padding: 0 24px;
+		}
+
+		.filter-bar {
+			display: inline-flex;
+			align-items: center;
+			padding: 4px;
 			border: 1px solid #D2D2D2;
 			border-radius: 50px;
-			width: fit-content;
 		}
 
 		.filter-pill {
@@ -192,12 +194,15 @@
 		}
 
 		@media screen and (max-width: 768px) {
+			.filter-wrap {
+				padding: 0 16px;
+			}
+
 			.filter-bar {
 				flex-wrap: wrap;
 				gap: 8px;
 				padding: 8px;
 				border-radius: 20px;
-				margin: 0 16px;
 				border-color: #f5f5f5;
 			}
 
@@ -240,16 +245,18 @@
 		<p>A collection of practical design principles and tips I've picked up over the years working on product design.</p>
 	</div>
 
-	<div class="filter-bar">
-		<button class="filter-pill active" data-category="all">All</button>
-		<button class="filter-pill" data-category="Process">Process</button>
-		<button class="filter-pill" data-category="Layout">Layout</button>
-		<button class="filter-pill" data-category="Typography">Typography</button>
-		<button class="filter-pill" data-category="UX">UX</button>
-		<button class="filter-pill" data-category="Visual Design">Visual Design</button>
-		<button class="filter-pill" data-category="Accessibility">Accessibility</button>
-		<button class="filter-pill" data-category="Content">Content</button>
-		<button class="filter-pill" data-category="Iconography">Iconography</button>
+	<div class="filter-wrap">
+		<div class="filter-bar">
+			<button class="filter-pill active" data-category="all">All</button>
+			<button class="filter-pill" data-category="Process">Process</button>
+			<button class="filter-pill" data-category="Layout">Layout</button>
+			<button class="filter-pill" data-category="Typography">Typography</button>
+			<button class="filter-pill" data-category="UX">UX</button>
+			<button class="filter-pill" data-category="Visual Design">Visual Design</button>
+			<button class="filter-pill" data-category="Accessibility">Accessibility</button>
+			<button class="filter-pill" data-category="Content">Content</button>
+			<button class="filter-pill" data-category="Iconography">Iconography</button>
+		</div>
 	</div>
 
 	<div class="tips-list">
