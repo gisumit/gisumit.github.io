@@ -108,83 +108,97 @@
 			background: #f5f5f5;
 		}
 
-		.tips-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-			gap: 1.5rem;
+		.tips-list {
+			display: flex;
+			flex-direction: column;
 			padding: 2rem 24px 4rem;
 			max-width: 1024px;
 			margin: 0 auto;
 		}
 
-		.tip-card.hidden {
+		.tip-row {
+			display: flex;
+			align-items: center;
+			gap: 0;
+			padding-bottom: 32px;
+			margin-bottom: 32px;
+			border-bottom: 1px solid #D9D9D9;
+		}
+
+		.tip-row:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+		.tip-row.hidden {
 			display: none;
 		}
 
-		.tip-card {
-			border: 1px solid #E5E5EA;
-			border-radius: 16px;
-			padding: 32px;
-			transition: box-shadow 0.2s ease;
-		}
-
-		.tip-card:hover {
-			box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-		}
-
 		.tip-number {
-			font-size: 13px;
-			font-weight: 600;
-			color: #EE0000;
-			letter-spacing: 0.5px;
-			text-transform: uppercase;
-		}
-
-		.tip-card h2 {
-			font-size: 22px;
-			font-weight: 600;
-			letter-spacing: -0.8px;
-			margin: 12px 0 8px;
-		}
-
-		.tip-card p {
-			font-size: 15px;
-			line-height: 1.65;
-			color: #636366;
-		}
-
-		.tag {
-			display: inline-block;
-			margin-top: 16px;
-			padding: 4px 10px;
+			flex-shrink: 0;
+			width: 140px;
 			font-size: 12px;
 			font-weight: 500;
-			border-radius: 6px;
-			background: #F2F2F7;
-			color: #8E8E93;
+			color: #EE0000;
+			letter-spacing: -0.38px;
 		}
 
-		.tip-card .ref {
-			display: block;
-			margin-top: 12px;
+		.tip-content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			max-width: 578px;
+		}
+
+		.tip-content h2 {
+			font-size: 22px;
+			font-weight: 500;
+			letter-spacing: -1.35px;
+			color: #000;
+		}
+
+		.tip-content p {
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #8E8E93;
+			letter-spacing: -0.98px;
+		}
+
+		.tip-content .ref {
 			font-size: 13px;
 			color: #8E8E93;
 		}
 
-		.tip-card .ref a {
+		.tip-content .ref a {
 			color: #636366;
 			text-decoration: underline;
 			text-underline-offset: 2px;
 		}
 
-		.tip-card .ref a:hover {
+		.tip-content .ref a:hover {
 			color: #1a1a1a;
+		}
+
+		.tag {
+			flex-shrink: 0;
+			margin-left: auto;
+			font-size: 12px;
+			font-weight: 500;
+			color: #000;
+			letter-spacing: -0.38px;
+			text-transform: lowercase;
 		}
 
 		@media screen and (max-width: 768px) {
 			.filter-bar {
-				overflow-x: auto;
+				flex-wrap: wrap;
+				gap: 8px;
+				padding: 8px;
+				border-radius: 20px;
 				margin: 0 16px;
+				border-color: #f5f5f5;
 			}
 
 			.page-header h1 {
@@ -192,8 +206,18 @@
 				letter-spacing: -1.14px;
 			}
 
-			.tips-grid {
-				grid-template-columns: 1fr;
+			.tip-row {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 16px;
+			}
+
+			.tip-number {
+				width: auto;
+			}
+
+			.tag {
+				margin-left: 0;
 			}
 		}
 	</style>
@@ -228,130 +252,171 @@
 		<button class="filter-pill" data-category="Iconography">Iconography</button>
 	</div>
 
-	<div class="tips-grid">
-		<div class="tip-card">
-			<span class="tip-number">Tip 01</span>
-			<h2>Start with the problem, not the pixels</h2>
-			<p>Before opening Figma, write down the user problem you're solving. A clear problem statement keeps the design focused and prevents feature creep.</p>
+	<div class="tips-list">
+		<div class="tip-row">
+			<span class="tip-number">Design tip [001]</span>
+			<div class="tip-content">
+				<h2>Start with the problem, not the pixels</h2>
+				<p>Before opening Figma, write down the user problem you're solving. A clear problem statement keeps the design focused and prevents feature creep.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/design-thinking/" target="_blank">Design Thinking 101 — Nielsen Norman Group</a></span>
+			</div>
 			<span class="tag">Process</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 02</span>
-			<h2>Use an 8px spacing system</h2>
-			<p>Stick to multiples of 8 for all spacing and sizing. It creates visual consistency, aligns to most device grids, and makes developer handoff painless.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [002]</span>
+			<div class="tip-content">
+				<h2>Use an 8px spacing system</h2>
+				<p>Stick to multiples of 8 for all spacing and sizing. It creates visual consistency, aligns to most device grids, and makes developer handoff painless.</p>
+				<span class="ref">→ <a href="https://spec.fm/specifics/8-pt-grid" target="_blank">The 8-Point Grid System — Spec.fm</a></span>
+			</div>
 			<span class="tag">Layout</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 03</span>
-			<h2>Limit your type scale</h2>
-			<p>Use no more than 4–5 font sizes in a project. A constrained type scale creates hierarchy without visual noise and keeps your UI feeling cohesive.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [003]</span>
+			<div class="tip-content">
+				<h2>Limit your type scale</h2>
+				<p>Use no more than 4–5 font sizes in a project. A constrained type scale creates hierarchy without visual noise and keeps your UI feeling cohesive.</p>
+				<span class="ref">→ <a href="https://typescale.com/" target="_blank">Type Scale — A Visual Calculator</a></span>
+			</div>
 			<span class="tag">Typography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 04</span>
-			<h2>Design for the empty state first</h2>
-			<p>Empty states are a user's first impression. Design them with helpful guidance, illustrations, or calls to action — not just blank screens.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [004]</span>
+			<div class="tip-content">
+				<h2>Design for the empty state first</h2>
+				<p>Empty states are a user's first impression. Design them with helpful guidance, illustrations, or calls to action — not just blank screens.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/empty-state-interface-design/" target="_blank">The Role of Empty States in UX — Nielsen Norman Group</a></span>
+			</div>
 			<span class="tag">UX</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 05</span>
-			<h2>Use color with intention</h2>
-			<p>Reserve saturated colors for interactive elements and status indicators. Let neutral tones do the heavy lifting so accent colors carry meaning.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [005]</span>
+			<div class="tip-content">
+				<h2>Use color with intention</h2>
+				<p>Reserve saturated colors for interactive elements and status indicators. Let neutral tones do the heavy lifting so accent colors carry meaning.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/color-enhance-design/" target="_blank">Using Color to Enhance Your Design — Nielsen Norman Group</a></span>
+			</div>
 			<span class="tag">Visual Design</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 06</span>
-			<h2>Test with real content</h2>
-			<p>Lorem ipsum hides layout problems. Use real names, real data lengths, and edge cases early. Your design should survive the messiness of actual content.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [006]</span>
+			<div class="tip-content">
+				<h2>Test with real content</h2>
+				<p>Lorem ipsum hides layout problems. Use real names, real data lengths, and edge cases early. Your design should survive the messiness of actual content.</p>
+				<span class="ref">→ <a href="https://sensible.com/dont-make-me-think/" target="_blank">Don't Make Me Think by Steve Krug</a></span>
+			</div>
 			<span class="tag">Process</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 07</span>
-			<h2>Prioritize accessibility from day one</h2>
-			<p>Check color contrast ratios, use semantic HTML, and ensure keyboard navigation works. Accessibility isn't a feature — it's a quality baseline.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [007]</span>
+			<div class="tip-content">
+				<h2>Prioritize accessibility from day one</h2>
+				<p>Check color contrast ratios, use semantic HTML, and ensure keyboard navigation works. Accessibility isn't a feature — it's a quality baseline.</p>
+				<span class="ref">→ <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank">Introduction to Web Accessibility — W3C WAI</a></span>
+			</div>
 			<span class="tag">Accessibility</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 08</span>
-			<h2>Reduce cognitive load</h2>
-			<p>Every extra element on screen competes for attention. Remove anything that doesn't directly help the user complete their task. When in doubt, simplify.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [008]</span>
+			<div class="tip-content">
+				<h2>Reduce cognitive load</h2>
+				<p>Every extra element on screen competes for attention. Remove anything that doesn't directly help the user complete their task. When in doubt, simplify.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/minimize-cognitive-load/" target="_blank">Minimize Cognitive Load — Nielsen Norman Group</a></span>
+			</div>
 			<span class="tag">UX</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 09</span>
-			<h2>Learn to write well</h2>
-			<p>The words in your UI matter more than the layout. Clear, concise microcopy reduces confusion and builds trust faster than any visual polish.</p>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [009]</span>
+			<div class="tip-content">
+				<h2>Learn to write well</h2>
+				<p>The words in your UI matter more than the layout. Clear, concise microcopy reduces confusion and builds trust faster than any visual polish.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/topic/writing-web/" target="_blank">Writing for the Web — Nielsen Norman Group</a></span>
+			</div>
 			<span class="tag">Content</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 10</span>
-			<h2>Icons should be instantly recognizable</h2>
-			<p>Icons should be simple and intuitive so users can understand them instantly without relying on tooltips.</p>
-			<span class="ref">→ <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank">Jakob Nielsen's usability heuristics: "Recognition rather than recall"</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [010]</span>
+			<div class="tip-content">
+				<h2>Icons should be instantly recognizable</h2>
+				<p>Icons should be simple and intuitive so users can understand them instantly without relying on tooltips.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank">Jakob Nielsen's usability heuristics: "Recognition rather than recall"</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 11</span>
-			<h2>If users must hover to understand, redesign</h2>
-			<p>If users must hover over an icon to understand it, the design introduces unnecessary cognitive load and slows interaction.</p>
-			<span class="ref">→ <a href="https://sensible.com/dont-make-me-think/" target="_blank">Don't Make Me Think by Steve Krug</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [011]</span>
+			<div class="tip-content">
+				<h2>If users must hover to understand, redesign</h2>
+				<p>If users must hover over an icon to understand it, the design introduces unnecessary cognitive load and slows interaction.</p>
+				<span class="ref">→ <a href="https://sensible.com/dont-make-me-think/" target="_blank">Don't Make Me Think by Steve Krug</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 12</span>
-			<h2>Avoid abstract icons for key actions</h2>
-			<p>Avoid abstract or unfamiliar icons for key actions — users should not have to interpret meaning.</p>
-			<span class="ref">→ <a href="https://www.nngroup.com/articles/icon-usability/" target="_blank">Nielsen Norman Group research on icon usability</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [012]</span>
+			<div class="tip-content">
+				<h2>Avoid abstract icons for key actions</h2>
+				<p>Avoid abstract or unfamiliar icons for key actions — users should not have to interpret meaning.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/icon-usability/" target="_blank">Nielsen Norman Group research on icon usability</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 13</span>
-			<h2>Leverage existing mental models</h2>
-			<p>Use widely recognized patterns (e.g., search, menu, delete) to leverage existing mental models.</p>
-			<span class="ref">→ <a href="https://www.nngroup.com/articles/ten-usability-heuristics/#4-consistency-and-standards" target="_blank">Consistency and standards heuristic by Jakob Nielsen</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [013]</span>
+			<div class="tip-content">
+				<h2>Leverage existing mental models</h2>
+				<p>Use widely recognized patterns (e.g., search, menu, delete) to leverage existing mental models.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/ten-usability-heuristics/#4-consistency-and-standards" target="_blank">Consistency and standards heuristic by Jakob Nielsen</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 14</span>
-			<h2>Pair unclear icons with labels</h2>
-			<p>When an icon is not universally clear, pair it with a label to improve comprehension and accessibility.</p>
-			<span class="ref">→ <a href="https://www.nngroup.com/articles/icon-usability/" target="_blank">Nielsen Norman Group — Icon Usability guidelines</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [014]</span>
+			<div class="tip-content">
+				<h2>Pair unclear icons with labels</h2>
+				<p>When an icon is not universally clear, pair it with a label to improve comprehension and accessibility.</p>
+				<span class="ref">→ <a href="https://www.nngroup.com/articles/icon-usability/" target="_blank">Nielsen Norman Group — Icon Usability guidelines</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 15</span>
-			<h2>Tooltips should support, not replace clarity</h2>
-			<p>Tooltips should support, not replace, clarity. Relying on them for basic understanding indicates weak visual communication.</p>
-			<span class="ref">→ <a href="https://www.wiley.com/en-us/About+Face%3A+The+Essentials+of+Interaction+Design-p-9781118766576" target="_blank">About Face: The Essentials of Interaction Design by Alan Cooper</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [015]</span>
+			<div class="tip-content">
+				<h2>Tooltips should support, not replace clarity</h2>
+				<p>Tooltips should support, not replace, clarity. Relying on them for basic understanding indicates weak visual communication.</p>
+				<span class="ref">→ <a href="https://www.wiley.com/en-us/About+Face%3A+The+Essentials+of+Interaction+Design-p-9781118766576" target="_blank">About Face: The Essentials of Interaction Design by Alan Cooper</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 
-		<div class="tip-card">
-			<span class="tip-number">Tip 16</span>
-			<h2>Keep icon usage consistent across screens</h2>
-			<p>Inconsistent icon usage across screens creates confusion and reduces user trust.</p>
-			<span class="ref">→ <a href="https://www.basicbooks.com/titles/don-norman/the-design-of-everyday-things/9780465050659/" target="_blank">The Design of Everyday Things by Don Norman</a></span>
+		<div class="tip-row">
+			<span class="tip-number">Design tip [016]</span>
+			<div class="tip-content">
+				<h2>Keep icon usage consistent across screens</h2>
+				<p>Inconsistent icon usage across screens creates confusion and reduces user trust.</p>
+				<span class="ref">→ <a href="https://www.basicbooks.com/titles/don-norman/the-design-of-everyday-things/9780465050659/" target="_blank">The Design of Everyday Things by Don Norman</a></span>
+			</div>
 			<span class="tag">Iconography</span>
 		</div>
 	</div>
 
 	<script>
 		const pills = document.querySelectorAll('.filter-pill');
-		const cards = document.querySelectorAll('.tip-card');
+		const cards = document.querySelectorAll('.tip-row');
 
 		function filterByCategory(category) {
 			cards.forEach(card => {
